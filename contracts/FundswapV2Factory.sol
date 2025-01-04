@@ -44,7 +44,7 @@ contract FundswapV2Factory is IFundswapV2Factory {
         FundswapV2Pair(pair).initialize(token0, token1);
         getPair[token0][token1] = pair;
         getPair[token1][token0] = pair;
-        allPairs.push[pair];
+        allPairs.push(pair);
 
         emit PairCreated(token0, token1, pair, allPairs.length);
 
