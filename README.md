@@ -157,6 +157,17 @@ https://www.rareskills.io/post/uniswap-v2-mint-and-burn
 
 # first time liquidity minting when pool is empty
 
+https://www.rareskills.io/post/uniswap-v2-mint-and-burn
+
+NOTE: to prevent from "inflation attack" usinswap enforce to burn first 1000 liquidity.
+
+            liquidity = Math.sqrt(amount0.mul(amount1)).sub(MINIMUM_LIQUIDITY);
+           _mint(address(0), MINIMUM_LIQUIDITY); // permanently lock the first MINIMUM_LIQUIDITY tokens
+
+
+## calculating mintFee and Swap fee
+
+https://www.rareskills.io/post/uniswap-v2-mintfee
 
 
 

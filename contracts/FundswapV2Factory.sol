@@ -1,7 +1,9 @@
-pragma solidity ^0.5.16;
+pragma solidity =0.5.16;
 
 import './interfaces/IFundswapV2Factory.sol';
 import './FundswapV2Pair.sol';
+import './FundswapV2ERC20.sol';
+
 
 
 contract FundswapV2Factory is IFundswapV2Factory {
@@ -41,13 +43,16 @@ contract FundswapV2Factory is IFundswapV2Factory {
         assembly {
             pair := create2(0, add(bytecode, 32), mload(bytecode), salt)
         }
+        // pair = address(new FundswapV2Pair());
         FundswapV2Pair(pair).initialize(token0, token1);
         getPair[token0][token1] = pair;
         getPair[token1][token0] = pair;
         allPairs.push(pair);
 
         emit PairCreated(token0, token1, pair, allPairs.length);
-
     }
 
+
 }
+
+

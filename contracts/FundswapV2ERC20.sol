@@ -1,10 +1,9 @@
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.5.16;
+pragma solidity =0.5.16;
 
 import './interfaces/IFundswapV2ERC20.sol';
 import './libraries/SafeMath.sol';
 
-contract FundswapV2ERC20 is  IUniswapV2ERC20{
+contract FundswapV2ERC20 is IFundswapV2ERC20{
     using SafeMath for uint;
 
     string public constant name = 'Fundswap V2';
